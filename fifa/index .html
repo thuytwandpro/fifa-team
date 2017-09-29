@@ -1,0 +1,105 @@
+<html>
+<head>
+	<link rel='stylesheet' type='text/css' href='style.css'/>
+</head>
+<body>
+	<div id='selector'>
+		<label><input type="radio" id="r1" name="myRadios" onchange="handleChange(event);" onmousedown="handleMouse(event)" value="1" checked /><h1>HOME</h1></label>
+		<label><input type="radio" id="r2" name="myRadios" onchange="handleChange(event);" onmousedown="handleMouse(event)" value="2" ><h1>AWAY</h1></label >
+	</div>
+	<div id='stadium'>
+		<div class='half'>
+			<div class='main'>
+				<div class='square'>
+					<div class='sub-square'></div>
+				</div>
+				<div class='circle'></div>
+			</div>
+			<div class='big-circle'></div>
+			<div class='main opp'>
+				<div class='square'>
+					<div class='sub-square'></div>
+				</div>
+				<div class='circle'></div>
+			</div>
+		</div>
+	</div>
+	<div id='team'>
+		<div id='red'>
+			<img src='img/morata.png' alt='gk'  height='80px' width='80px' title='Morata'/>
+		</div>
+		<div id='green'>
+			<div id='cam'>
+				<img src='img/coutinho.png' alt='gk'  height='80px' width='80px' title='Coutinho'/>
+			</img>
+				<img src='img/isco.png' alt='gk'  height='80px' width='80px' title='Isco'/>
+			</div>
+			<div id='l-rm'>
+				<img src='img/sandro.png' alt='gk'  height='80px' width='80px' title='Sandro'/>
+				<img src='img/danilo.png' alt='gk'  height='80px' width='80px' title='Danilo'/>
+			</div>
+			<div id='cdm'>
+				<img src='img/dier.png' alt='gk'  height='80px' width='80px' title='Dier'/>
+				<img src='img/weigl.png' alt='gk'  height='80px' width='80px' title='Weighl'/>
+			</div>
+		</div>
+		<div id='blue'>
+			<img src='img/manolas.png' alt='gk'  height='80px' width='80px' title='Manolas'/>
+			<img src='img/laporte.png' alt='gk'  height='80px' width='80px' title='Laporte'/>
+			<img src='img/vrij.png' alt='gk'  height='80px' width='80px' title='Vrij'/>
+		</div>
+		<div id='orange'>
+			<img src='img/de-gea.png' alt='gk'  height='80px' width='80px' title='De Gea'/>
+		</div>
+	</div>
+	<div id='second'>
+		<div id='red'>
+			<img src='img/lukaku.png' alt='gk'  height='80px' width='80px' title='Lukaku'/>
+			<img src='img/kane.png' alt='gk'  height='80px' width='80px' title='kane'/>
+		</div>
+		<div id='green'>
+				<img src='img/eriksen.png' alt='gk'  height='80px' width='80px' title='Eriksen'/>
+				<img src='img/kroos.png' alt='gk'  height='80px' width='80px' title='Kroos'/>
+				<img src='img/pogba.png' alt='gk'  height='80px' width='80px' title='Pogba'/>
+				<img src='img/bruyne.png' alt='gk'  height='80px' width='80px' title='Bruyne'/>
+		</div>
+		<div id='blue'>
+			<img src='img/alaba.png' alt='gk'  height='80px' width='80px' title='Alaba'/>
+			<img src='img/varane.png' alt='gk'  height='80px' width='80px' title='Varane'/>
+			<img src='img/mustafi.png' alt='gk'  height='80px' width='80px' title='Mustafi'/>
+			<img src='img/walker.png' alt='gk'  height='80px' width='80px' title='Walker'/>
+		</div>
+		<div id='orange'>
+			<img src='img/ter-stegen.png' alt='gk'  height='80px' width='80px' title='Ter-stegen'/>
+		</div>
+	</div>
+	
+	<script>
+		handleChange = function(e){
+			//alert("checked value " + e.currentTarget.value);
+			var team=document.getElementById('team');
+			var second=document.getElementById('second');
+			if(e.currentTarget.value == 1){
+				team.style.display = 'block';
+				second.style.display = 'none';
+			}
+			else{
+				team.style.display = 'none';
+				second.style.display = 'block';
+			}
+		}
+
+			
+		handleMouse = function(e){
+			var radios = document.getElementsByName("myRadios");
+			var val;
+			for(var i = 0; i < radios.length; i++){
+				if(radios[i].checked){
+					val = radios[i].value;
+				}
+			}
+			
+		}
+	</script>
+</body>
+</html>
